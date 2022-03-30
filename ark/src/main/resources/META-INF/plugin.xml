@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>com.isyscore.plugins.code-ark</id>
+    <name>代码检查</name>
+    <vendor email="kucs@isyscore.com" url="http://www.isyscore.com">杭州指令集智能科技有限公司</vendor>
+
+    <description><![CDATA[
+    如何保证代码质量?此插件采集研发在开发过程中的执行动作，把风险判断提前.<br>
+    实际操作举例就是，`当你开发完成一个接口，开始测试运行时，此插件就可以采集到这个接口的全部信息并生成该接口的全部接口动作`
+    ]]></description>
+    <change-notes><![CDATA[
+        <em>1. 步骤1</em>
+    ]]></change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <toolWindow id="Read-Book" secondary="false" anchor="right" factoryClass="com.isyscore.plugin.ark.factory.ReadFactory"/>
+
+        <!-- 在Setting中添加自定义配置模版 -->
+        <projectConfigurable groupId="tools" displayName="My test config" id="test.id" instance="com.isyscore.plugin.ark.factory.SettingFactory"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
